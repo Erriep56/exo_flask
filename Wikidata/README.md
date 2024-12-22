@@ -17,7 +17,7 @@ Dans votre terminal :
 
 puis sur votre navigateur:
 
-http://127.0.0.1:5000/retrieve_wikidata/<id>
+http://127.0.0.1:5000/retrieve_wikidata/id
 
 remplacez l'id par un identifiant wikidata
 
