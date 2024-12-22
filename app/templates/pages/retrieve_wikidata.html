@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultat de l'API Wikidata pour {{ id }}</title>
+</head>
+<body>
+    <h1>Résultat de l'API Wikidata pour {{ id }}</h1>
+    <h2>Informations sur la requête</h2>
+    <ul>
+        <!-- Appel les données du dictionnaire metadata
+            dans lequel on a stocké le code HTTP et le type de contenu -->
+        <li><strong>Code HTTP :</strong> {{ metadata.status_code }}</li>
+        <li><strong>Type de contenu :</strong> {{ metadata.content_type }}</li>
+    </ul>
+
+    {% if entity_data %}
+        <h2>Données de l'entité</h2>
+        <pre>{{ entity_data | tojson(indent=10) }}</pre>
+    {% else %}
+        <p style="color: red;">Aucune idée donnée valide n'a été retournée pour l'ID "{{ id }}"</p>
+    {% endif %}
+</body>
+</html>
